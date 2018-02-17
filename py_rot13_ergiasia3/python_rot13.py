@@ -6,27 +6,35 @@ while True:
 	if (ans=="file"):
 		while True:
 			try:
-				input_file=raw_input("Input file to read from")
+				input_file=raw_input("Input file to read from :(type 'exit' to exit) ")
+				if (input_file=="exit"):
+					break
 				inp=open(input_file,"r")
 				break
 			except:
 				print "file not found"
 		break
 	elif(ans=="text"):
-		inp=raw_input("Input text")
+		inp=raw_input("Input text :(type 'exit' to exit) ")
 		break
 
-
-while True:
-	ans=raw_input("Whould you like to encrypt or decrypt in rot13? (en/de)")
-	if(ans=="en"):
-		for line in inp:
-			final+=rot13_add.encode_rot13(line);
-		print final
-		break
-	elif(ans=="de"):
-		for line in inp:
-			final+=rot13_add.decode_rot13(line);
-		print final
-		break
-
+if (inp!="exit"):
+	while True:
+		ans=raw_input("Whould you like to encrypt or decrypt in rot13? (en/de) :")
+		if(ans=="en"):
+			for line in inp:
+				final+=rot13_add.encode_rot13(line);
+			print final
+			break
+		elif(ans=="de"):
+			for line in inp:
+				final+=rot13_add.decode_rot13(line);
+			print final
+			break
+	while True:
+		ans1=raw_input("would you like to save this text?(y/n)")
+		if (ans1=="y"):
+			saves=open("saves.txt","a")
+			final_save="saved text("+ans+"):\n"+final+"\n"
+			saves.write(final_save)
+			break
