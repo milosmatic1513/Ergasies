@@ -38,3 +38,4 @@ if (inp!="exit"):
 			final_save="saved text("+ans+"):\n"+final+"\n"
 			saves.write(final_save)
 			break
+		elif(ans=="n"):break
