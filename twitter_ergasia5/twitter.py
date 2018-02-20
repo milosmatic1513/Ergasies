@@ -1,4 +1,4 @@
-
+#sto arxeio twitter_add.py xreiazetai token key kai access token apo tin istoselida tou twitter
 import twitter_add
 
 while True:
